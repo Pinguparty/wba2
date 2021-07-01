@@ -77,4 +77,6 @@ Rails.application.configure do
   # This lets Rails reload the classes on every Request. This is slow, but useful for development.
   config.reload_classes_only_on_change = false
   config.serve_static_assets = false
+  config.cache_classes = false
+
 end

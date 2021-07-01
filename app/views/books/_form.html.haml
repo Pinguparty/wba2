@@ -22,6 +22,7 @@
     = f.label :isbn
     = f.text_field :isbn
   .field
-    = f.select :author_ids, options_from_collection_for_select(Author.all, :id, :family_name), :prompt => "Select Authors", :multiple => true
+    = f.label :author_ids
+    = f.select :author_ids, Author.all.collect { |author| [author.family_name, author.id] }, {}, multiple: true
   .actions
     = f.submit 'Save'
