@@ -73,4 +73,8 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # This lets Rails reload the classes on every Request. This is slow, but useful for development.
+  config.reload_classes_only_on_change = false
+  config.serve_static_assets = false
 end

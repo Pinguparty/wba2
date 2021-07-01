@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @book.title
+%p
+  %b Publisher:
+  = @book.publisher
+%p
+  %b Pub year:
+  = @book.pub_year
+%p
+  %b Edition:
+  = @book.edition
+%p
+  %b Isbn:
+  = @book.isbn
+%p
+  %b Authors:
+  = @book.authors.map{ |a| a.given_name + " " + a.family_name }.join(", ")
+
+= link_to 'Edit', edit_book_path(@book)
+\|
+= link_to 'Back', books_path
