@@ -8,7 +8,8 @@
       %th Pub year
       %th Edition
       %th Isbn
-      %th Authors
+      %th # Authors
+      %th # Instances
       %th
       %th
       %th
@@ -22,6 +23,7 @@
         %td= book.edition
         %td= book.isbn
         %td= book.authors.count
+        %td= book.book_instances.count
         %td= link_to 'Show', book
         %td= link_to 'Edit', edit_book_path(book)
         %td= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }

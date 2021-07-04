@@ -1,0 +1,35 @@
+%h1 Listing book_instances
+
+%table
+  %thead
+    %tr
+      %th Book
+      %th Shelfmark
+      %th Purchased at
+      %th Lended by
+      %th Reserved by
+      %th Checkout at
+      %th Due at
+      %th Returned at
+      %th
+      %th
+      %th
+
+  %tbody
+    - @book_instances.each do |book_instance|
+      %tr
+        %td= book_instance.book.title
+        %td= book_instance.shelfmark
+        %td= book_instance.purchased_at
+        %td= book_instance.lended_by
+        %td= book_instance.reserved_by
+        %td= book_instance.checkout_at
+        %td= book_instance.due_at
+        %td= book_instance.returned_at
+        %td= link_to 'Show', book_instance
+        %td= link_to 'Edit', edit_book_instance_path(book_instance)
+        %td= link_to 'Destroy', book_instance, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Book instance', new_book_instance_path

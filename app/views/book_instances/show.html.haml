@@ -1,0 +1,32 @@
+%p#notice= notice
+
+%p
+  %b Book:
+  = @book_instance.book.title
+%p
+  %b Shelfmark:
+  = @book_instance.shelfmark
+%p
+  %b Purchased at:
+  = @book_instance.purchased_at
+%p
+  %b Lended by:
+  - if @book_instance.lended_by
+    = @book_instance.lended_by.id
+%p
+  %b Reserved by:
+  - if @book_instance.reserved_by
+    = @book_instance.reserved_by.id
+%p
+  %b Checkout at:
+  = @book_instance.checkout_at
+%p
+  %b Due at:
+  = @book_instance.due_at
+%p
+  %b Returned at:
+  = @book_instance.returned_at
+
+= link_to 'Edit', edit_book_instance_path(@book_instance)
+\|
+= link_to 'Back', book_instances_path
