@@ -17,23 +17,17 @@
  /* container */
 body {
     display: grid;
-    grid-template-rows: 80px auto 20px;
-    grid-template-columns: 10em auto;
+    grid-template-rows: auto; /* Zeilen */
+    grid-template-columns: 14em auto; /* Spalten */
     column-gap: 0em;
 }
 
 /* items */
-#sidebar {
-    background-color: lightblue;
+#sidebar dl{
+    background-color: rgba(165, 242, 246, 0.897);
 }
-#sidebar dl {
-    padding-left: 30px;
-}
-dl dt {
-    padding-left: 15px;
-}
-dt dd {
-    padding-left: 15px;
+#sidebar dt {
+    background-color: rgb(122, 228, 238);
 }
 
 #main {

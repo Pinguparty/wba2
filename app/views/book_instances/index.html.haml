@@ -26,9 +26,9 @@
         %td= book_instance.checkout_at
         %td= book_instance.due_at
         %td= book_instance.returned_at
-        %td= link_to 'Show', book_instance
-        %td= link_to 'Edit', edit_book_instance_path(book_instance)
-        %td= link_to 'Destroy', book_instance, method: :delete, data: { confirm: 'Sind Sie sicher?' }
+        %td= link_to 'Details', book_instance
+        %td= link_to 'Ändern', edit_book_instance_path(book_instance)
+        %td= link_to 'Löschen', book_instance, method: :delete, data: { confirm: 'Sind Sie sicher?' }
 
 %br
 

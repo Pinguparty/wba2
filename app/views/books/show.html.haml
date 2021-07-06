@@ -19,6 +19,10 @@
   %b Aut.:
   = @book.authors.map{ |a| a.given_name + " " + a.family_name }.join(", ")
 
+%p
+  %b ID:
+  = @book.id
+
 = link_to 'Ändern', edit_book_path(@book)
 \|
 = link_to 'Zurück', books_path

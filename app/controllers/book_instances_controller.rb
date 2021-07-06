@@ -25,7 +25,7 @@ class BookInstancesController < ApplicationController
 
     respond_to do |format|
       if @book_instance.save
-        format.html { redirect_to @book_instance, notice: "Book instance was successfully created." }
+        format.html { redirect_to @book_instance, notice: "Buchinstanz wurde erfolgreich angelegt." }
         format.json { render :show, status: :created, location: @book_instance }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class BookInstancesController < ApplicationController
   def update
     respond_to do |format|
       if @book_instance.update(book_instance_params)
-        format.html { redirect_to @book_instance, notice: "Book instance was successfully updated." }
+        format.html { redirect_to @book_instance, notice: "Buchinstanz wurde erfolgreich geändert." }
         format.json { render :show, status: :ok, location: @book_instance }
       else
         format.html { render :edit, status: :unprocessable_entity }

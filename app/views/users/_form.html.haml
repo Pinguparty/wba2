@@ -7,25 +7,25 @@
           %li= message
 
   .field
-    = f.label :Nachname
+    = f.label :family_name, "Nachname"
     = f.text_field :family_name
   .field
-    = f.label :Vorname
+    = f.label :given_name, "Vorname"
     = f.text_field :given_name
   .field
-    = f.label :Adresse
+    = f.label :adress, "Adresse"
     = f.text_area :adress
   .field
-    = f.label :E-Mail
+    = f.label :email, "Email"
     = f.text_field :email
   .field
-    = f.label :Passwort
+    = f.label :password, "Passwort"
     = f.text_field :password
   .field
-    = f.label :blockiert
+    = f.label :blocked, "blockiert"
     = f.check_box :blocked
   .field
-    = f.label :Bemerkungen
+    = f.label :remarks, "Bemerkungen"
     = f.text_area :remarks
   .actions
     = f.submit 'Speichern'
