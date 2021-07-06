@@ -1,32 +1,32 @@
 %p#notice= notice
 
 %p
-  %b Book:
+  %b Buch:
   = @book_instance.book.title
 %p
-  %b Shelfmark:
+  %b Regalzeichen:
   = @book_instance.shelfmark
 %p
-  %b Purchased at:
+  %b Gekauft bei:
   = @book_instance.purchased_at
 %p
-  %b Lended by:
+  %b Ausgeliehen von:
   - if @book_instance.lended_by
     = @book_instance.lended_by.id
 %p
-  %b Reserved by:
+  %b Reserviert von:
   - if @book_instance.reserved_by
     = @book_instance.reserved_by.id
 %p
-  %b Checkout at:
+  %b Ausgecheckt am:
   = @book_instance.checkout_at
 %p
-  %b Due at:
+  %b Fällig am:
   = @book_instance.due_at
 %p
-  %b Returned at:
+  %b Zurückgegeben am:
   = @book_instance.returned_at
 
-= link_to 'Edit', edit_book_instance_path(@book_instance)
+= link_to 'Ändern', edit_book_instance_path(@book_instance)
 \|
-= link_to 'Back', book_instances_path
+= link_to 'Zurück', book_instances_path

@@ -25,4 +25,4 @@
     = f.label :author_ids
     = f.select :author_ids, Author.all.collect { |author| [author.family_name, author.id] }, {}, multiple: true
   .actions
-    = f.submit 'Save'
+    = f.submit 'Speichern'

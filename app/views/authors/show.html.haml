@@ -1,18 +1,18 @@
 %p#notice= notice
 
 %p
-  %b Family name:
+  %b Nachname:
   = @author.family_name
 %p
-  %b Given name:
+  %b Vorname:
   = @author.given_name
 %p
-  %b Affiliation:
+  %b Beschreibung:
   = @author.affiliation
 %p
-  %b Books:
+  %b Bücher:
   = @author.books.map(&:title).join(', ')
 
-= link_to 'Edit', edit_author_path(@author)
+= link_to 'Ändern', edit_author_path(@author)
 \|
-= link_to 'Back', authors_path
+= link_to 'Zurück', authors_path

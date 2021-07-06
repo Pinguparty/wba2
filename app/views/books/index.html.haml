@@ -1,33 +1,78 @@
-%h1 Listing books
+!!!
+%html
+  %head
+  %body
+    %h1 Bücherliste
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Publisher
-      %th Pub year
-      %th Edition
-      %th Isbn
-      %th # Authors
-      %th # Instances
-      %th
-      %th
-      %th
+    #sidebar 
+      %dl
+        %dt Autor:innen
+        %dd 
+          %a{href: "link"} alle
+        %dd
+          %a{href: "link"} ohne Buch
+          
+        %dt Bücher
+        %dd
+          %a{href: "link"} alle
+        %dd
+          %a{href: "link"} ohne Autoren
+        %dd
+          %a{href: "link"} ohne Buchbestand
 
-  %tbody
-    - @books.each do |book|
-      %tr
-        %td= book.title
-        %td= book.publisher
-        %td= book.pub_year
-        %td= book.edition
-        %td= book.isbn
-        %td= book.authors.count
-        %td= book.book_instances.count
-        %td= link_to 'Show', book
-        %td= link_to 'Edit', edit_book_path(book)
-        %td= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }
+        %dt Buchexemplare
+        %dd
+          %a{href: "link"} Gesamtbestand
+        %dd
+          %a{href: "link"} ausleihbare
+        %dd
+          %a{href: "link"} vorgemerkte
+        %dd
+          %a{href: "link"} ausgeliehene
+        %dd
+          %a{href: "link"} überfällige
 
-%br
+        %dt Benutzer:innen
+        %dd
+          %a{href: "link"} alle
+        %dd
+          %a{href: "link"} mit Vormerkungen
+        %dd
+          %a{href: "link"} mit Ausleihen
+        %dd
+          %a{href: "link"} mit überfälligen Büchern
 
-= link_to 'New Book', new_book_path
+  %br
+
+    #main
+      %table
+        %thead
+          %tr
+            %th Titel
+            %th Verlag
+            %th Erscheinungsjahr
+            %th Ausgabe
+            %th ISBN
+            %th # Aut.
+            %th # Exemplare
+            %th
+            %th
+            %th
+
+        %tbody
+          - @books.each do |book|
+            %tr
+              %td= book.title
+              %td= book.publisher
+              %td= book.pub_year
+              %td= book.edition
+              %td= book.isbn
+              %td= book.authors.count
+              %td= book.book_instances.count
+              %td= link_to 'Details', book
+              %td= link_to 'Ändern', edit_book_path(book)
+              %td= link_to 'Löschen', book, method: :delete, data: { confirm: 'Sind Sie sicher?' }
+
+    %br
+
+= link_to 'Neues Buch anlegen', new_book_path

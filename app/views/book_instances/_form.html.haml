@@ -7,19 +7,19 @@
           %li= message
 
   .field
-    = f.label :book_id
+    = f.label :Bücher_ID
     = f.text_field :book_id
   .field
-    = f.label :shelfmark
+    = f.label :Regalzeichen
     = f.text_field :shelfmark
   -#.field
     -#= f.label :purchased_at
     -#= f.date_select :purchased_at
   .field
-    = f.label :lended_by_id
+    = f.label :Ausgeliehen_von_ID
     = f.text_field :lended_by_id
   .field
-    = f.label :reserved_by_id
+    = f.label :Reserviert_von_ID
     = f.text_field :reserved_by_id
   -#.field
     -#= f.label :checkout_at
@@ -31,4 +31,4 @@
     -#= f.label :returned_at
     -#= f.datetime_select :returned_at
   .actions
-    = f.submit 'Save'
+    = f.submit 'Speichern'

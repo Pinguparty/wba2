@@ -1,24 +1,24 @@
 %p#notice= notice
 
 %p
-  %b Title:
+  %b Titel:
   = @book.title
 %p
-  %b Publisher:
+  %b Verlag:
   = @book.publisher
 %p
-  %b Pub year:
+  %b Erscheinungsjahr:
   = @book.pub_year
 %p
-  %b Edition:
+  %b Ausgabe:
   = @book.edition
 %p
-  %b Isbn:
+  %b ISBN:
   = @book.isbn
 %p
-  %b Authors:
+  %b Aut.:
   = @book.authors.map{ |a| a.given_name + " " + a.family_name }.join(", ")
 
-= link_to 'Edit', edit_book_path(@book)
+= link_to 'Ändern', edit_book_path(@book)
 \|
-= link_to 'Back', books_path
+= link_to 'Zurück', books_path

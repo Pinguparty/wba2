@@ -1,3 +1,30 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* container */
+body {
+    display: grid;
+    grid-template-rows: 80px auto 20px;
+    grid-template-columns: 10em auto;
+    column-gap: 0em;
+}
+
+/* items */
+#sidebar {
+    background-color: lightblue;
+    dl {
+        padding-left: 30px;
+        dt {
+            padding-left: 15px;
+        }
+        dd {
+            padding-left: 15px;
+        }
+    }
+}
+
+#main {
+    padding-left: 1em;
+    overflow: auto;
+}
