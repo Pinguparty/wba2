@@ -2,7 +2,7 @@
 %html
   %head
     %title Wba2
-    %meta{ name:"viewport" content:"width=device-width,initial-scale=1"}
+    %meta{ name:"viewport", content:"width=device-width,initial-scale=1"}
     = csrf_meta_tags
     = csp_meta_tag
 
@@ -10,4 +10,41 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
+    #sidebar 
+      %dl
+        %dt Autor:innen
+        %dd 
+          %a{href: "link"} alle
+        %dd
+          %a{href: "link"} ohne Buch
+          
+        %dt Bücher
+        %dd
+          %a{href: "link"} alle
+        %dd
+          %a{href: "link"} ohne Autoren
+        %dd
+          %a{href: "link"} ohne Buchbestand
+
+        %dt Buchexemplare
+        %dd
+          %a{href: "link"} Gesamtbestand
+        %dd
+          %a{href: "link"} ausleihbare
+        %dd
+          %a{href: "link"} vorgemerkte
+        %dd
+          %a{href: "link"} ausgeliehene
+        %dd
+          %a{href: "link"} überfällige
+
+        %dt Benutzer:innen
+        %dd
+          %a{href: "link"} alle
+        %dd
+          %a{href: "link"} mit Vormerkungen
+        %dd
+          %a{href: "link"} mit Ausleihen
+        %dd
+          %a{href: "link"} mit überfälligen Büchern
     = yield

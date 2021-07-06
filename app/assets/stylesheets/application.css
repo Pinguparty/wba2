@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+ /* container */
+body {
+    display: grid;
+    grid-template-rows: 80px auto 20px;
+    grid-template-columns: 10em auto;
+    column-gap: 0em;
+}
+
+/* items */
+#sidebar {
+    background-color: lightblue;
+}
+#sidebar dl {
+    padding-left: 30px;
+}
+dl dt {
+    padding-left: 15px;
+}
+dt dd {
+    padding-left: 15px;
+}
+
+#main {
+    padding-left: 1em;
+    overflow: auto;
+}

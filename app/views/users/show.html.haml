@@ -1,27 +1,27 @@
 %p#notice= notice
 
 %p
-  %b Family name:
+  %b Nachname:
   = @user.family_name
 %p
-  %b Given name:
+  %b Vorname:
   = @user.given_name
 %p
-  %b Adress:
+  %b Adresse:
   = @user.adress
 %p
-  %b Email:
+  %b E-Mail:
   = @user.email
-%p
-  %b Password:
+%p{:style => "display:none;"}
+  %b Passwort:
   = @user.password
 %p
-  %b Blocked:
+  %b Blockiert:
   = @user.blocked
 %p
-  %b Remarks:
+  %b Bemerkungen:
   = @user.remarks
 
-= link_to 'Edit', edit_user_path(@user)
+= link_to 'Ändern', edit_user_path(@user)
 \|
-= link_to 'Back', users_path
+= link_to 'Zurück', users_path

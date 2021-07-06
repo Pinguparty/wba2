@@ -1,15 +1,15 @@
-%h1 Listing users
+%h1 Nutzerliste
 
 %table
   %thead
     %tr
-      %th Family name
-      %th Given name
-      %th Adress
-      %th Email
-      %th Password
-      %th Blocked
-      %th Remarks
+      %th Nachname
+      %th Vorname
+      %th Adresse
+      %th E-Mail
+      %th Passwort
+      %th Blockiert
+      %th Bemerkungen
       %th
       %th
       %th
@@ -26,8 +26,8 @@
         %td= user.remarks
         %td= link_to 'Show', user
         %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Sind Sie sicher?' }
 
 %br
 
-= link_to 'New User', new_user_path
+= link_to 'Neuer Nutzer', new_user_path
