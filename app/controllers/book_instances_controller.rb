@@ -1,5 +1,5 @@
 class BookInstancesController < ApplicationController
-  before_action :set_book_instance, only: %i[ show edit update destroy ]
+  before_action :set_book_instance, only: %i[ show edit update destroy lending]
 
   # GET /book_instances or /book_instances.json
   def index
@@ -17,6 +17,10 @@ class BookInstancesController < ApplicationController
 
   # GET /book_instances/1/edit
   def edit
+  end
+
+  # GET /book_instances/1/lending
+  def lending
   end
 
   # POST /book_instances or /book_instances.json

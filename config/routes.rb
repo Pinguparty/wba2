@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :book_instances
+  resources :book_instances do
+    member do
+      get 'lending'
+    end
+  end
   resources :users
   resources :authors
   resources :books

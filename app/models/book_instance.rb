@@ -7,10 +7,6 @@ class BookInstance < ApplicationRecord
 
   before_update :before_update
 
-  before_create do
-    self.purchased_at = Date.today
-  end
-
   def before_update
     if self.lended_by != nil
       self.checkout_at = Time.now;
