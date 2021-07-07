@@ -3,7 +3,7 @@ class BookInstancesController < ApplicationController
 
   # GET /book_instances or /book_instances.json
   def index
-    @book_instances = BookInstance.all
+    @book_instances = BookInstance.custom_select(params[:filter])
   end
 
   # GET /book_instances/1 or /book_instances/1.json

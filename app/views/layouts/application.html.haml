@@ -16,37 +16,37 @@
         %dd 
           = link_to 'alle', authors_path
         %dd
-          = link_to 'ohne Buch', authors_path(filter: 'no_book')
+          = link_to 'ohne Buch', authors_path(filter: 'no_books')
           
         %dt Bücher
         %dd
           = link_to 'alle', books_path
         %dd
-          = link_to 'ohne Autoren', books_path(filter: 'no author')
+          = link_to 'ohne Autoren', books_path(filter: 'no_authors')
         %dd
-          = link_to 'ohne Buchbestand', books_path(filter: 'no book_instances') #todo: filtername
+          = link_to 'ohne Buchbestand', books_path(filter: 'no_book_instances')
 
         %dt Buchexemplare
         %dd
           = link_to 'Gesamtbestand', book_instances_path
         %dd
-          = link_to 'ausleihbare', book_instances_path(filter: 'borrowable') #todo: filtername
+          = link_to 'ausleihbare', book_instances_path(filter: 'lendable')
         %dd
-          = link_to 'vorgemerkte', book_instances_path(filter: 'earmarked') #todo: filtername
+          = link_to 'vorgemerkte', book_instances_path(filter: 'reserved')
         %dd
-          = link_to 'ausgeliehene', book_instances_path(filter: 'borrowed') #todo: filtername
+          = link_to 'ausgeliehene', book_instances_path(filter: 'lended')
         %dd
-          = link_to 'überfällige', book_instances_path(filter: 'overdue') #todo: filtername
+          = link_to 'überfällige', book_instances_path(filter: 'due')
 
         %dt Benutzer:innen
         %dd
           = link_to 'alle', users_path
         %dd
-          = link_to 'mit Vormerkungen', users_path(filter: 'with reservation') #todo: filtername
+          = link_to 'mit Vormerkungen', users_path(filter: 'has_reserved')
         %dd
-          = link_to 'mit Ausleihen', users_path(filter: 'with borrowing') #todo: filtername
+          = link_to 'mit Ausleihen', users_path(filter: 'has_lended')
         %dd
-          = link_to 'mit überfälligen Büchern', users_path(filter: 'with overdue books') #todo: filtername
+          = link_to 'mit überfälligen Büchern', users_path(filter: 'has_due')
     
     #main
       = yield
