@@ -27,6 +27,8 @@
   %b Zurückgegeben am:
   = @book_instance.returned_at
 
+= link_to 'Ausleihe', lending_book_instance_path(@book_instance)
+\|
 = link_to 'Ändern', edit_book_instance_path(@book_instance)
 \|
 = link_to 'Zurück', book_instances_path

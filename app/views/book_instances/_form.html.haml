@@ -7,20 +7,21 @@
           %li= message
 
   .field
-    = f.label :Bücher_ID
-    = f.text_field :book_id
+    = f.label :Buch
+    -# = f.text_field :book_id
+    = f.select :book_id, Book.all.collect { |book| [book.title, book.id] }
   .field
     = f.label :Regalzeichen
     = f.text_field :shelfmark
-  -#.field
-    -#= f.label :purchased_at
-    -#= f.date_select :purchased_at
   .field
-    = f.label :Ausgeliehen_von_ID
-    = f.text_field :lended_by_id
-  .field
-    = f.label :Reserviert_von_ID
-    = f.text_field :reserved_by_id
+    = f.label :Gekauft_am
+    = f.date_select :purchased_at
+  -# .field
+  -#   = f.label :Ausgeliehen_von_ID
+  -#   = f.text_field :lended_by_id
+  -# .field
+  -#   = f.label :Reserviert_von_ID
+  -#   = f.text_field :reserved_by_id
   -#.field
     -#= f.label :checkout_at
     -#= f.datetime_select :checkout_at

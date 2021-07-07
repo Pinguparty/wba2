@@ -11,6 +11,7 @@
       %th Ausgecheckt am
       %th Fällig am
       %th Zurückgegeben am
+      %th Ausleihe
       %th
       %th
       %th
@@ -26,6 +27,7 @@
         %td= book_instance.checkout_at
         %td= book_instance.due_at
         %td= book_instance.returned_at
+        %td= link_to 'Ausleihe', lending_book_instance_path(book_instance)
         %td= link_to 'Details', book_instance
         %td= link_to 'Ändern', edit_book_instance_path(book_instance)
         %td= link_to 'Löschen', book_instance, method: :delete, data: { confirm: 'Sind Sie sicher?' }
