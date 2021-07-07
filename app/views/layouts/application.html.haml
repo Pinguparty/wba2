@@ -14,39 +14,39 @@
       %dl
         %dt Autor:innen
         %dd 
-          %a{href: "link"} alle
+          = link_to 'alle', authors_path
         %dd
-          %a{href: "link"} ohne Buch
+          = link_to 'ohne Buch', authors_path(filter: 'no_book')
           
         %dt Bücher
         %dd
-          %a{href: "link"} alle
+          = link_to 'alle', books_path
         %dd
-          %a{href: "link"} ohne Autoren
+          = link_to 'ohne Autoren', books_path(filter: 'no author')
         %dd
-          %a{href: "link"} ohne Buchbestand
+          = link_to 'ohne Buchbestand', books_path(filter: 'no book_instances') #todo: filtername
 
         %dt Buchexemplare
         %dd
-          %a{href: "link"} Gesamtbestand
+          = link_to 'Gesamtbestand', book_instances_path
         %dd
-          %a{href: "link"} ausleihbare
+          = link_to 'ausleihbare', book_instances_path(filter: 'borrowable') #todo: filtername
         %dd
-          %a{href: "link"} vorgemerkte
+          = link_to 'vorgemerkte', book_instances_path(filter: 'earmarked') #todo: filtername
         %dd
-          %a{href: "link"} ausgeliehene
+          = link_to 'ausgeliehene', book_instances_path(filter: 'borrowed') #todo: filtername
         %dd
-          %a{href: "link"} überfällige
+          = link_to 'überfällige', book_instances_path(filter: 'overdue') #todo: filtername
 
         %dt Benutzer:innen
         %dd
-          %a{href: "link"} alle
+          = link_to 'alle', users_path
         %dd
-          %a{href: "link"} mit Vormerkungen
+          = link_to 'mit Vormerkungen', users_path(filter: 'with reservation') #todo: filtername
         %dd
-          %a{href: "link"} mit Ausleihen
+          = link_to 'mit Ausleihen', users_path(filter: 'with borrowing') #todo: filtername
         %dd
-          %a{href: "link"} mit überfälligen Büchern
+          = link_to 'mit überfälligen Büchern', users_path(filter: 'with overdue books') #todo: filtername
     
     #main
       = yield
