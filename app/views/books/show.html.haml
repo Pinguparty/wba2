@@ -20,7 +20,7 @@
   = @book.authors.map{ |a| a.given_name + " " + a.family_name }.join(", ")
 
 %p
-  %b ID:
+  %b Buch ID:
   = @book.id
 
 = link_to 'Ändern', edit_book_path(@book)
