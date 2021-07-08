@@ -17,6 +17,9 @@ class BookInstance < ApplicationRecord
 
   validates_with BlockedValidator
 
+  validates :book, :shelfmark, presence: { message: "muss vorhanden sein." }
+
+
   def before_update
     if self.lended_by_id_changed?
       if self.lended_by != nil

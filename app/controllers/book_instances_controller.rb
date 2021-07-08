@@ -55,7 +55,7 @@ class BookInstancesController < ApplicationController
   def destroy
     @book_instance.destroy
     respond_to do |format|
-      format.html { redirect_to book_instances_url, notice: "Book instance was successfully destroyed." }
+      format.html { redirect_to book_instances_url, notice: "Buchinstanz wurde erfolgreich gelöscht." }
       format.json { head :no_content }
     end
   end

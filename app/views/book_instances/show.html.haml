@@ -12,11 +12,11 @@
 %p
   %b Ausgeliehen von:
   - if @book_instance.lended_by
-    = @book_instance.lended_by.id
+    = @book_instance.lended_by.full_name
 %p
   %b Reserviert von:
   - if @book_instance.reserved_by
-    = @book_instance.reserved_by.id
+    = @book_instance.reserved_by.full_name
 %p
   %b Ausgecheckt am:
   = @book_instance.checkout_at

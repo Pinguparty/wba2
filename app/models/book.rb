@@ -4,6 +4,9 @@ class Book < ApplicationRecord
 
     before_create :set_pub_year
 
+    validates :title, :publisher, :pub_year, :edition, :isbn, presence: { message: "muss vorhanden sein." }
+    validate :isbn_length
+
     def self.custom_select(filter)
         books = Book.all
         
@@ -19,5 +22,11 @@ class Book < ApplicationRecord
 
     def set_pub_year
         self.pub_year = Date.current.year
+    end
+
+    def isbn_length
+        if !(self.isbn.length == 10 || self.isbn.length == 13)
+            errors.add(:isbn, "ISBN muss 10 oder 13 Zeichen lang sein")
+        end
     end
 end

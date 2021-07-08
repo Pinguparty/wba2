@@ -18,14 +18,5 @@
   .field
     = f.label  :reserved_by_id, "Reserviert_von"
     = f.select :reserved_by_id, User.all.collect { |user| [user.short_name, user.id] }, include_blank: true
-  .field
-    = f.label :checkout_at, "Ausgecheckt am"
-    = f.datetime_select :checkout_at, include_blank: true
-  .field
-    = f.label :due_at, "Fällig am"
-    = f.date_select :due_at, include_blank: true
-  .field
-    = f.label :returned_at, "Zurückgegeben am"
-    = f.datetime_select :returned_at, include_blank: true
   .actions
     = f.submit 'Speichern'
