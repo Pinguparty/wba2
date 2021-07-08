@@ -7,7 +7,8 @@
       %th Vorname
       %th Adresse
       %th Email
-      %th Passwort
+      %th{:style => "display:none;"}
+        Passwort
       %th Blockiert
       %th Bemerkungen
       %th
@@ -21,12 +22,13 @@
         %td= user.given_name
         %td= user.adress
         %td= user.email
-        %td= user.password
+        %td{:style => "display:none;"}
+          = user.password
         %td= user.blocked
         %td= user.remarks
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Sind Sie sicher?' }
+        %td= link_to 'Details', user
+        %td= link_to 'Ändern', edit_user_path(user)
+        %td= link_to 'Löschen', user, method: :delete, data: { confirm: 'Sind Sie sicher?' }
 
 %br
 

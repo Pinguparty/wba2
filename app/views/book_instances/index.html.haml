@@ -22,8 +22,12 @@
         %td= book_instance.book.title
         %td= book_instance.shelfmark
         %td= book_instance.purchased_at
-        %td= book_instance.lended_by
-        %td= book_instance.reserved_by
+        %td 
+          - if book_instance.lended_by
+            = book_instance.lended_by.short_name
+        %td
+          - if book_instance.reserved_by
+            = book_instance.reserved_by.short_name
         %td= book_instance.checkout_at
         %td= book_instance.due_at
         %td= book_instance.returned_at

@@ -18,11 +18,11 @@
   .field
     = f.label :Ausgeliehen_von
     -# = f.text_field :lended_by_id
-    = f.select :lended_by_id, User.all.collect { |user| [user.family_name, user.id] }, {}, include_blank: true
+    = f.select :lended_by_id, User.all.collect { |user| [user.short_name, user.id] }, include_blank: true
   .field
     = f.label :Reserviert_von
     -# = f.text_field :reserved_by_id
-    = f.select :reserved_by_id, User.all.collect { |user| [user.given_name + " " + user.family_name, user.id] }, include_blank: true
+    = f.select :reserved_by_id, User.all.collect { |user| [user.short_name, user.id] }, include_blank: true
   .field
     = f.label :checkout_at
     = f.datetime_select :checkout_at, include_blank: true
