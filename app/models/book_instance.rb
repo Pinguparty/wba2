@@ -1,4 +1,12 @@
-require 'date'
+class BlockedValidator < ActiveModel::Validator
+  def validate(record)
+    if record.lended_by_id
+      if record.lended_by_id_changed? && record.lended_by.blocked
+        record.errors.add :blocked, "Geblockte User dürfen nicht ausleihen"
+      end
+    end
+  end
+end
 
 class BookInstance < ApplicationRecord
   belongs_to :book
@@ -7,15 +15,23 @@ class BookInstance < ApplicationRecord
 
   before_update :before_update
 
+  validates_with BlockedValidator
+
   def before_update
-    if self.lended_by != nil
-      self.checkout_at = Time.now;
-      self.due_at = Time.now + 40.days;
-      self.returned_at = nil;
-    else
-      self.checkout_at = nil
-      self.due_at = nil
-      self.returned_at = Time.now
+    if self.lended_by_id_changed?
+      if self.lended_by != nil
+        self.checkout_at = Time.now;
+        self.due_at = Time.now + 40.days;
+        self.returned_at = nil;
+      else
+        self.checkout_at = nil
+        self.due_at = nil
+        self.returned_at = Time.now
+      end
+
+      if self.lended_by_id?
+        self.due_at = nil
+      end
     end
   end
 

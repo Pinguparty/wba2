@@ -9,4 +9,8 @@ class Author < ApplicationRecord
         end
         return authors
     end
+
+    def short_name
+        "#{given_name[0]}. #{family_name}"
+    end
 end

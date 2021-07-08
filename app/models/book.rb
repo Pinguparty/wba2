@@ -2,6 +2,8 @@ class Book < ApplicationRecord
     has_and_belongs_to_many :authors
     has_many :book_instances, dependent: :destroy
 
+    before_create :set_pub_year
+
     def self.custom_select(filter)
         books = Book.all
         
@@ -13,5 +15,9 @@ class Book < ApplicationRecord
         end
 
         return books
+    end
+
+    def set_pub_year
+        self.pub_year = Date.current.year
     end
 end
