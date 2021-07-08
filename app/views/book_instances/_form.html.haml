@@ -1,7 +1,7 @@
 = form_for @book_instance do |f|
   - if @book_instance.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@book_instance.errors.count, "error")} prohibited this book_instance from being saved:"
+      %h2= "#{pluralize(@book_instance.errors.count, "error")} verbietet diese Buchinstanz zu speichern:"
       %ul
         - @book_instance.errors.full_messages.each do |message|
           %li= message
