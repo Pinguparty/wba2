@@ -17,7 +17,7 @@
  /* container */
 body {
     display: grid;
-    grid-template-rows: 80px auto 20px; /* Zeilen */
+    grid-template-rows: 100px auto 20px; /* Zeilen */
     grid-template-columns: 14em auto; /* Spalten */
     column-gap: 1em;
     row-gap: 1em;
