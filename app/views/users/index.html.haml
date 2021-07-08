@@ -22,9 +22,9 @@
         %td= user.email
         %td= user.blocked
         %td= user.remarks
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Sind Sie sicher?' }
+        %td= link_to 'Details', user
+        %td= link_to 'Ändern', edit_user_path(user)
+        %td= link_to 'Löschen', user, method: :delete, data: { confirm: 'Sind Sie sicher?' }
 
 %br
 
