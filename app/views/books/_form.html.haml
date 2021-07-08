@@ -7,22 +7,22 @@
           %li= message
 
   .field
-    = f.label :title
+    = f.label :title, "Titel"
     = f.text_field :title
   .field
-    = f.label :publisher
+    = f.label :publisher, "Verlag"
     = f.text_field :publisher
   .field
-    = f.label :pub_year
+    = f.label :pub_year, "Erscheinungsjahr"
     = f.number_field :pub_year
   .field
-    = f.label :edition
+    = f.label :edition, "Ausgabe"
     = f.number_field :edition
   .field
-    = f.label :isbn
+    = f.label :isbn, "ISBN"
     = f.text_field :isbn
   .field
-    = f.label :author_ids
+    = f.label :author_ids, "Autor"
     = f.select :author_ids, Author.all.collect { |author| [author.family_name, author.id] }, {}, multiple: true
   .actions
     = f.submit 'Speichern'

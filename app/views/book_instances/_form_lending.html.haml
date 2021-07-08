@@ -7,30 +7,25 @@
           %li= message
 
   .field
-    = f.label :Buch
+    = f.label :book_id, "Buch"
     = f.text_field :book_id, disabled: true
   .field
-    = f.label :Regalzeichen
+    = f.label :shelfmark, "Regalzeichen"
     = f.text_field :shelfmark, disabled: true
-  -#.field
-    -#= f.label :purchased_at
-    -#= f.date_select :purchased_at
   .field
-    = f.label :Ausgeliehen_von
-    -# = f.text_field :lended_by_id
-    = f.select :lended_by_id, User.all.collect { |user| [user.family_name, user.id] }, {}, include_blank: true
+    = f.label :lended_by_id, "Ausgeliehen_von"
+    = f.select :lended_by_id, User.all.collect { |user| [user.given_name + " " + user.family_name, user.id] }, {}, include_blank: true
   .field
-    = f.label :Reserviert_von
-    -# = f.text_field :reserved_by_id
+    = f.label  :reserved_by_id, "Reserviert_von"
     = f.select :reserved_by_id, User.all.collect { |user| [user.given_name + " " + user.family_name, user.id] }, include_blank: true
   .field
-    = f.label :checkout_at
+    = f.label :checkout_at, "Ausgecheckt am"
     = f.datetime_select :checkout_at, include_blank: true
   .field
-    = f.label :due_at
+    = f.label :due_at, "Fällig am"
     = f.date_select :due_at, include_blank: true
   .field
-    = f.label :returned_at
+    = f.label :returned_at, "Zurückgegeben am"
     = f.datetime_select :returned_at, include_blank: true
   .actions
     = f.submit 'Speichern'

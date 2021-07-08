@@ -20,7 +20,7 @@ body {
     grid-template-rows: 100px auto 20px; /* Zeilen */
     grid-template-columns: 14em auto; /* Spalten */
     column-gap: 1em;
-    row-gap: 1em;
+    row-gap: 2em;
 }
 
 /* items */
@@ -35,16 +35,47 @@ body {
 
 #sidebar dt {
     background-color: rgb(255, 129, 129);
+    margin-top: .5em;
+    margin-bottom: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 0.5em;
     /* rgb(122, 228, 238); */
-    /* padding-top: .5em;
-    padding-bottom: .5em; */
 }
 #sidebar dl{
     background-color: rgb(221, 214, 214);
     /* rgba(165, 242, 246, 0.897); */
+    padding-bottom: .5em;
 }
-
 
 #main {
     overflow: auto;
 }
+
+table, th, td {
+    border: 1px solid lightgrey;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td{
+    text-align: center;
+}
+
+th, td{
+    padding: 5px;
+}
+
+th{
+    background-color: #aa0404;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+

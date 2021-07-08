@@ -1,4 +1,4 @@
-%h1 Liste aller Buchinstanzen
+%h1 Liste aller Buchexemplare
 
 %table
   %thead
@@ -11,7 +11,7 @@
       %th Ausgecheckt am
       %th Fällig am
       %th Zurückgegeben am
-      %th Ausleihe
+      %th 
       %th
       %th
       %th
@@ -22,8 +22,8 @@
         %td= book_instance.book.title
         %td= book_instance.shelfmark
         %td= book_instance.purchased_at
-        %td= book_instance.lended_by
-        %td= book_instance.reserved_by
+        %td= book_instance.lended_by_id
+        %td= book_instance.reserved_by_id
         %td= book_instance.checkout_at
         %td= book_instance.due_at
         %td= book_instance.returned_at
