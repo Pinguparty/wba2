@@ -14,10 +14,10 @@
     = f.text_field :shelfmark, disabled: true
   .field
     = f.label :lended_by_id, "Ausgeliehen_von"
-    = f.select :lended_by_id, User.all.collect { |user| [user.short_name, user.id] }, {}, include_blank: true
+    = f.select :lended_by_id, User.all.collect { |user| [user.short_name, user.id] }, include_blank: true
   .field
     = f.label  :reserved_by_id, "Reserviert_von"
-    = f.select :reserved_by_id, User.all.collect { |user| [user.short_name + " " + user.family_name, user.id] }, include_blank: true
+    = f.select :reserved_by_id, User.all.collect { |user| [user.short_name, user.id] }, include_blank: true
   .field
     = f.label :checkout_at, "Ausgecheckt am"
     = f.datetime_select :checkout_at, include_blank: true
